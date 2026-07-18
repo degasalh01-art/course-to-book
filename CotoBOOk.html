@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحويل الكورسات المسجلة إلى كتب تفاعلية فاخرة | BrainIT</title>
+    <style>
+        :root {
+            --bg-color: #fafbfc;
+            --text-main: #1a202c;
+            --text-muted: #4a5568;
+            --accent-blue: #2b6cb0;
+            --accent-soft: #edf2f7;
+            --border-color: #e2e8f0;
+            --card-bg: #ffffff;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            padding: 25px 0;
+            border-bottom: 1px solid var(--border-color);
+            background-color: #ffffff;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+
+        .logo span {
+            color: var(--accent-blue);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 90px 0 60px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 38px;
+            margin: 0 0 20px 0;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto 35px auto;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--text-main);
+            color: #ffffff;
+            padding: 14px 35px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-blue);
+        }
+
+        /* Transformation Preview Section */
+        .transformation-section {
+            padding: 60px 0;
+        }
+
+        .transformation-box {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.01);
+        }
+
+        .grid-compare {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .grid-compare {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .source-video {
+            border: 1px solid #cbd5e0;
+            padding: 25px;
+            border-radius: 6px;
+            background-color: #f7fafc;
+        }
+
+        .result-book {
+            border: 2px solid var(--text-main);
+            padding: 25px;
+            border-radius: 6px;
+            background-color: #ffffff;
+            background: radial-gradient(#e2e8f0 1px, transparent 1px);
+            background-size: 12px 12px;
+        }
+
+        /* Pricing Area */
+        .pricing-section {
+            background-color: #ffffff;
+            padding: 80px 0;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .pricing-card {
+            background: var(--bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 35px;
+        }
+
+        .pricing-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 25px;
+            margin-bottom: 25px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+
+        .feature-tick {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .tick-icon {
+            color: var(--accent-blue);
+            font-weight: bold;
+        }
+
+        /* Policy Alert Boxes */
+        .policy-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .policy-box {
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .policy-blue {
+            background-color: #edf2f7;
+            border-right: 4px solid var(--accent-blue);
+            color: #2b6cb0;
+        }
+
+        .policy-amber {
+            background-color: #fefcbf;
+            border-right: 4px solid #d69e2e;
+            color: #744210;
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            text-align: center;
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <div class="logo">Brain<span>IT</span></div>
+            <div style="font-size: 14px; color: var(--text-muted);">هندسة المحتوى الرقمي</div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>لا تترك كورساتك المسجلة حبيسة الشاشات.<br>حوّلها إلى أصول معرفية فاخرة.</h1>
+            <p>نقوم بتفريغ وهيكلة دوراتك الفيديويّة، وتنقية المادة العلمية من التكرار، وتحويلها إلى كتب إلكترونية وتفاعلية (Workbooks) تزيد من قيمة كورسِك وتضمن تطبيق متدربيك.</p>
+            <a href="#pricing" class="btn">ابدأ تحويل كورسِك الآن</a>
+        </div>
+    </section>
+
+    <section class="container transformation-section">
+        <div class="transformation-box">
+            <h3 style="text-align: center; margin-top: 0; margin-bottom: 30px; font-size: 22px;">كيف نحول شرحك الشفهي إلى منتج معرفي منظم؟</h3>
+            <div class="grid-compare">
+                <div class="source-video">
+                    <div style="font-size: 12px; color: #e53e3e; font-weight: bold; margin-bottom: 10px;">📺 في كورسِك المسجّل (فيديو)</div>
+                    <p style="font-size: 14px; margin: 0;">تشرح شفهياً وبشكل مسترسل عن خطة إعداد الميزانية، وتضرب أمثلة سريعة وتطلب من المتدرب إحضار ورقة وقلم ليسجل خلفك، مما قد يشتت تركيزه العالي...</p>
+                </div>
+                <div class="result-book">
+                    <div style="font-size: 12px; color: var(--accent-blue); font-weight: bold; margin-bottom: 10px;">• النتيجة في كتابك الإلكتروني المرفق</div>
+                    <div style="font-weight: bold; font-size: 16px; margin-bottom: 8px;">مصفوفة التدفق المالي الشخصي</div>
+                    <p style="font-size: 13px; color: var(--text-muted); margin: 0;">مخطط هيكلي مفرغ وبسيط (Minimalist) منسق هندسياً لتقسيم الدخل، مجهز بدقة للطباعة الفورية أو التعبئة والتفاعل الرقمي المباشر.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing-section" id="pricing">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 45px;">
+                <h2 style="font-size: 28px; margin: 0 0 10px 0;">الاستثمار والسياسات الفنية</h2>
+                <p style="color: var(--text-muted); font-size: 16px; margin: 0;">نظام تسعير مرن يعتمد هندسياً على حجم كتابك ومتطلبات مادتك العلمية</p>
+            </div>
+
+            <div class="pricing-card">
+                <div class="pricing-header">
+                    <div>
+                        <h3 style="font-size: 22px; margin: 0 0 8px 0;">تطوير وتنسيق وهيكلة الكتاب الداخلي</h3>
+                        <p style="color: var(--text-muted); font-size: 14px; margin: 0;">تفريغ ذكي، صياغة لغوية محكمة، معالجة التكرار، وتصميم المساحات التفاعلية.</p>
+                    </div>
+                    <div>
+                        <span style="font-size: 32px; font-weight: bold; color: var(--accent-blue);">$15 - $20</span>
+                        <span style="color: var(--text-muted); font-size: 14px;"> / للصفحة الواحدة</span>
+                    </div>
+                </div>
+
+                <h4 style="font-size: 16px; margin: 0 0 20px 0;">المخرجات الفنية والمميزات التي تستلمها:</h4>
+                <div class="features-grid">
+                    <div class="feature-tick">
+                        <span class="tick-icon">✓</span>
+                        <span><strong>نسخة Microsoft Word:</strong> ملف كامل مفتوح وقابل للتعديل والتطوير في أي وقت.</span>
+                    </div>
+                    <div class="feature-tick">
+                        <span class="tick-icon">✓</span>
+                        <span><strong>نسخة PDF جاهزة:</strong> مخرجات فنية نهائية بحجم A4 مجهزة ومحسنة للطباعة الفورية.</span>
+                    </div>
+                    <div class="feature-tick">
+                        <span class="tick-icon">✓</span>
+                        <span><strong>هندسة البيانات:</strong> تصفية وتجريد المحتوى من الحشو البرمجي أو التكرار اللفظي لضمان الانسيابية.</span>
+                    </div>
+                    <div class="feature-tick">
+                        <span class="tick-icon">✓</span>
+                        <span><strong>عناصر تفاعلية:</strong> جداول مخصصة، مصفوفات عمل ومساحات مفرغة ومريحة لعين المتدرب.</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- شروط التسليم والمراجعة المعتمدة -->
+            <div class="policy-container">
+                <div class="policy-box policy-blue">
+                    <strong>⏱️ مدة التسليم والمشروع:</strong><br>
+                    بسبب طبيعة هندسة المحتوى الدقيقة لضمان أعلى جودة؛ تعتمد مدة التسليم بشكل كامل على حجم المحتوى التدريبي الفعلي (عدد ساعات الفيديوهات وعمق المادة المعرفية). يتم الاتفاق وتثبيت الجدول الزمني بدقة قبل البدء.
+                </div>
+                
+                <div class="policy-box policy-amber">
+                    <strong>⚠️ نافذة المراجعة والتدقيق الفني (10 أيام):</strong><br>
+                    حفاظاً على تدفق العمل الهندسي؛ فترة المراجعة وطلب التعديلات متاحة مجاناً خلال **10 أيام فقط من تاريخ تسليم الكتيب الإلكتروني**. بعد انقضاء هذه المدة، يُعتبر المشروع مكتملاً ومسلماً بصفة نهائية.
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 45px;">
+                <a href="#" class="btn">احجز جلسة تحويل كورسِك الآن</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>جميع الحقوق محفوظة © منصة BrainIT لتطوير التعليم والوعي التقني 2026</p>
+        </div>
+    </footer>
+
+</body>
+</html>
